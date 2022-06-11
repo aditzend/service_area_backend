@@ -1,0 +1,22 @@
+version: '3.8'
+
+volumes:
+  postgis_data:
+
+services:
+  postgis:
+    image: postgis/postgis
+    deploy:
+      placement:
+        constraints:
+          - node.labels.postgis == 1
+    ports:
+      - 35164:5432
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_INITDB_ARGS=--locale=en_US.UTF-8
+      - PGDATA=/var/lib/postgresql/data
