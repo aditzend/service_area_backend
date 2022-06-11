@@ -1,10 +1,10 @@
 from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
-from providers import views
+from service_areas import views
 
 
 router = DefaultRouter()
-router.register('providers', views.ProviderViewSet)
+router.register('service_areas', views.ServiceAreaViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
