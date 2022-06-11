@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from glob import glob
+
+GDAL_LIBRARY_PATH='/usr/lib/libgdal.so'
+GEOS_LIBRARY_PATH='/usr/lib/libgeos.so'
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    'rest_framework_gis',
     'rest_framework',
     'providers',
     'service_areas',

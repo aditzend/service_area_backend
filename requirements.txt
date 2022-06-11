@@ -1,0 +1,5 @@
+django
+djangorestframework
+psycopg2
+djangorestframework-gis
+gunicorn==19.9.0
